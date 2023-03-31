@@ -56,7 +56,30 @@ void q_sort(int low, int high)
 
 		while (i <= j)	//langkah 10
 		{
-			// Search
+			// Search for an element greater then pivot
 			while ((arr[i] <= pivot) && (i <= high))	//langkah 5
+			{
+				i++;		// langkah 6
+				cmp_count++;
+			}
+			cmp_count++;
+
+			// search for an element less thanor equal to pivot
+
+			while ((arr[j] > pivot) && (j >= low))	//langkah 7
+				j--;		// langkah 8
+			cmp_count++;
+		}
+
+		cmp_count++;
+		if (i < j)		//langkah 9
+			// if greater elemen is on left of the elemen
+		{
+			// swap the element at index 1 with the element at index j
+			
+			swap(i, j);
+			mov_count++;
 		}
 }
+
+// j now containt the index of the last element in the sort list
