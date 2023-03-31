@@ -40,7 +40,7 @@ void swap(int x, int y)
 	arr[y] = temp;
 }
 
-void q_sort(int low, int high)
+void q_short(int low, int high)
 {
 	int pivot, i, j;
 	if (low > high)		// langkah 1
@@ -54,59 +54,61 @@ void q_sort(int low, int high)
 	j = high;			// langkah 4
 	pivot = arr[low];	// langkah 2
 
-		while (i <= j)	//langkah 10
+	while (i <= j)	//langkah 10
+	{
+		// Search for an element greater then pivot
+		while ((arr[i] <= pivot) && (i <= high))	//langkah 5
 		{
-			// Search for an element greater then pivot
-			while ((arr[i] <= pivot) && (i <= high))	//langkah 5
-			{
-				i++;		// langkah 6
-				cmp_count++;
-			}
+			i++;		// langkah 6
 			cmp_count++;
+		}
+		cmp_count++;
 
-			// search for an element less thanor equal to pivot
+		// search for an element less thanor equal to pivot
 
-			while ((arr[j] > pivot) && (j >= low))	//langkah 7
-				j--;		// langkah 8
+		while ((arr[j] > pivot) && (j >= low))	//langkah 7
+		{
+			j--;		// langkah 8
 			cmp_count++;
 		}
 
 		cmp_count++;
+
 		if (i < j)		//langkah 9
 			// if greater elemen is on left of the elemen
 		{
 			// swap the element at index 1 with the element at index j
-			
+
 			swap(i, j);
 			mov_count++;
 		}
+	}
+
+	// j now containt the index of the last element in the sort list
+
+	if (low < j)		// langkah 11
+
+		// move to the pivot to its correct position in the list
+	{
+		swap(low, j);
+		mov_count++;
+	}
+
+	// sort the list on the left of pivot using quick sort
+
+	q_short(low, j - 1);		// langkah 12
+
+	// sort the last on the right of pivot using quick sort
+
+	q_short(j + 1, high);		// langkah 13
 }
-
-// j now containt the index of the last element in the sort list
-
-if (low < j)		// langkah 11
-
-	// move to the pivot to its correct position in the list
-{
-	swap(low, j);
-	mov_count++;
-}
-
-// sort the list on the left of pivot using quick sort
-
-q_sort(low, j - 1);		// langkah 12
-
-// sort the last on the right of pivot using quick sort
-
-q_sort(j + 1, high);		// langkah 13
-
 
 void display() {
 	cout << "\n==================" << endl;
 	cout << "\n=sorted array" << endl;
 	cout << "\n==================" << endl;
 
-	for (int i = 0; i)
+	for (int i = 0; i<n; i++)
 	{
 		cout << arr[i] << " ";
 	}
@@ -118,7 +120,7 @@ int main()
 {
 	input();
 		// sort the array using quick sort
-	q_sort(0, n - 1);
+	q_short(0, n - 1);
 	display();
 	system("pause");
 
