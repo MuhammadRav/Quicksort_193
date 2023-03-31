@@ -110,5 +110,17 @@ void display() {
 	{
 		cout << arr[i] << " ";
 	}
-	cout
+	cout << "\n\nNumber of comparasions : " << cmp_count << endl;
+	cout << "Number of data movemen : " << mov_count << endl;
+}
+
+int main()
+{
+	input();
+		// sort the array using quick sort
+	q_sort(0, n - 1);
+	display();
+	system("pause");
+
+	return 0;
 }
