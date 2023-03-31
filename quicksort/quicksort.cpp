@@ -3,8 +3,8 @@ using namespace std;
 
 //array of integrers to hold values
 int arr[20];
-int cmp_count = 0		// number of comparasion
-int mov_count = 0		// number of movement
+int cmp_count = 0;		// number of comparasion
+int mov_count = 0;		// number of movement
 int n;
 
 void input() {
@@ -88,5 +88,10 @@ if (low < j)		// langkah 11
 
 	// move to the pivot to its correct position in the list
 {
+	swap(low, j);
+	mov_count++;
+}
 
-	}
+// sort the list on the left of pivot using quick sort
+
+q_sort(low, j - 1);		// langkah 12
