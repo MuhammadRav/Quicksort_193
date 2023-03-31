@@ -30,3 +30,33 @@ void input() {
 	}
 
 }
+// swap the element at_index x with the element at index y
+
+void swap(int x, int y)
+{
+	int temp;
+	temp = arr[x];
+	arr[x] = arr[y];
+	arr[y] = temp;
+}
+
+void q_sort(int low, int high)
+{
+	int pivot, i, j;
+	if (low > high)		// langkah 1
+		return;
+
+	// partition the list into two parts
+	// one containing element less that or equal to pivot
+	// outher containing element
+
+	i = low + 1;		// langkah 2
+	j = high;			// langkah 4
+	pivot = arr[low]	// langkah 2
+
+		while (i <= j)	//langkah 10
+		{
+			// Search
+			while ((arr[i] <= pivot) && (i <= high))	//langkah 5
+		}
+}
