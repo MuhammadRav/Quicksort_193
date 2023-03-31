@@ -95,3 +95,20 @@ if (low < j)		// langkah 11
 // sort the list on the left of pivot using quick sort
 
 q_sort(low, j - 1);		// langkah 12
+
+// sort the last on the right of pivot using quick sort
+
+q_sort(j + 1, high);		// langkah 13
+
+
+void display() {
+	cout << "\n==================" << endl;
+	cout << "\n=sorted array" << endl;
+	cout << "\n==================" << endl;
+
+	for (int i = 0; i)
+	{
+		cout << arr[i] << " ";
+	}
+	cout
+}
