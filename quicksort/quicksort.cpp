@@ -52,7 +52,7 @@ void q_sort(int low, int high)
 
 	i = low + 1;		// langkah 2
 	j = high;			// langkah 4
-	pivot = arr[low]	// langkah 2
+	pivot = arr[low];	// langkah 2
 
 		while (i <= j)	//langkah 10
 		{
@@ -83,3 +83,10 @@ void q_sort(int low, int high)
 }
 
 // j now containt the index of the last element in the sort list
+
+if (low < j)		// langkah 11
+
+	// move to the pivot to its correct position in the list
+{
+
+	}
